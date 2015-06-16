@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.berlin-buehnen.de/de/api/v1/location/?api_key=f62af108a3e0bc3743c9416a8b229cdabdad483b&format=json&username=askhelmut
+    uri: http://www.berlin-buehnen.de/de/api/v1/location/?api_key=test&format=json&username=test
     body:
       encoding: US-ASCII
       string: ''
@@ -11104,6 +11104,6 @@ http_interactions:
         aWNrZXRzIjoge30sICJ0aWNrZXRzX29wZW5pbmdfaG91cnMiOiBbXSwgInRp
         dGxlX2RlIjogIlppdGFkZWxsZSIsICJ0aXRsZV9lbiI6ICJaaXRhZGVsbGUi
         LCAid2Vic2l0ZSI6ICIifV19
-    http_version: 
+    http_version:
   recorded_at: Tue, 16 Jun 2015 15:23:41 GMT
 recorded_with: VCR 2.9.3

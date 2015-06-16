@@ -1,5 +1,4 @@
 require "byebug"
-require 'hashie'
 require 'httmultiparty'
 require 'uri'
 

@@ -4,7 +4,7 @@ describe BerlinBuehnen::ListResponse do
 
   subject do
     VCR.use_cassette("locations") do
-      BerlinBuehnen.new(username: "askhelmut", api_key: "f62af108a3e0bc3743c9416a8b229cdabdad483b").get('/location/')
+      BerlinBuehnen.new(username: "test", api_key: "test").get('/location/')
     end
   end
 

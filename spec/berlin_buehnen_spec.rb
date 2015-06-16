@@ -1,8 +1,8 @@
 require "spec_helper"
 
 describe BerlinBuehnen do
-  let(:username){ "askhelmut" }
-  let(:api_key){ "f62af108a3e0bc3743c9416a8b229cdabdad483b" }
+  let(:username){ "test" }
+  let(:api_key){ "test" }
 
   it "raises ArgumentError when initialized with no options" do
     expect{ BerlinBuehnen.new }.to raise_error(ArgumentError)

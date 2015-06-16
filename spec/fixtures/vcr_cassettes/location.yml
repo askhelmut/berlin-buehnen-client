@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.berlin-buehnen.de/de/api/v1/location/68?api_key=f62af108a3e0bc3743c9416a8b229cdabdad483b&format=json&username=askhelmut
+    uri: http://www.berlin-buehnen.de/de/api/v1/location/68?api_key=test&format=json&username=test
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Vary:
       - Accept-Language
       Location:
-      - http://www.berlin-buehnen.de/de/api/v1/location/68/?format=json&username=askhelmut&api_key=f62af108a3e0bc3743c9416a8b229cdabdad483b
+      - http://www.berlin-buehnen.de/de/api/v1/location/68/?format=json&username=test&api_key=test
       Content-Language:
       - de
       Cache-Control:
@@ -35,11 +35,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Tue, 16 Jun 2015 15:54:06 GMT
 - request:
     method: get
-    uri: http://www.berlin-buehnen.de/de/api/v1/location/68/?api_key=f62af108a3e0bc3743c9416a8b229cdabdad483b&format=json&username=askhelmut
+    uri: http://www.berlin-buehnen.de/de/api/v1/location/68/?api_key=test&format=json&username=test
     body:
       encoding: US-ASCII
       string: ''
@@ -145,6 +145,6 @@ http_interactions:
         ICJ0aXRsZV9kZSI6ICJBY2tlciBTdGFkdCBQYWxhc3QiLCAidGl0bGVfZW4i
         OiAiQWNrZXIgU3RhZHQgUGFsYXN0IiwgIndlYnNpdGUiOiAiaHR0cDovL2Fj
         a2Vyc3RhZHRwYWxhc3QuZGUvIn0=
-    http_version: 
+    http_version:
   recorded_at: Tue, 16 Jun 2015 15:54:07 GMT
 recorded_with: VCR 2.9.3
