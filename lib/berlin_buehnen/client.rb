@@ -60,13 +60,13 @@ module BerlinBuehnen
 
     private
 
-    def handle_response(refreshing_enabled=true, &block)
+    def handle_response(&block)
       response = block.call
       return unless response
 
       raise ResponseError.new(response) unless response.success?
 
-      BerlinBuehnen::Response.new(response)
+      BerlinBuehnen::Response.create(response)
     end
 
     def store_options(options={})

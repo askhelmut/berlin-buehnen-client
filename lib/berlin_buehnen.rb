@@ -5,6 +5,7 @@ require 'uri'
 
 require 'berlin_buehnen/client'
 require 'berlin_buehnen/response'
+require 'berlin_buehnen/list_response'
 require 'berlin_buehnen/version'
 
 module BerlinBuehnen

@@ -47,26 +47,29 @@ describe BerlinBuehnen do
       it { expect(subject.api_url).to eq("www.berlin-buehnen.de/de/api/v1")}
     end
 
-    [:get, :head].each do |method|
+    [:get].each do |method|
       describe "##{method}" do
-        xit "accepts urls as path and rewrite them" do
-          expect(BerlinBuehnen::Client).to receive(method).with('http://www.berlin-buehnen.de/de/api/v1/event/123', { query: { format: "json", username: username, api_key: api_key}})
+        it "accepts urls as path and rewrite them" do
+          expect(BerlinBuehnen::Client).to receive(method).with('http://www.berlin-buehnen.de/de/api/v1/production/123', { query: { format: "json", username: username, api_key: api_key}})
 
-          subject.send(method, "/event/123")
+          subject.send(method, "/production/123")
         end
 
-        xit "accepts additional query parameters" do
-          expect(BerlinBuehnen::Client).to receive(method).with('http://www.berlin-buehnen.de/de/api/v1/event/123', {query: { limit: 2, format: "json", username: username, api_key: api_key}})
-          subject.send(method, '/event/123', limit: 2)
+        it "accepts additional query parameters" do
+          expect(BerlinBuehnen::Client).to receive(method).with('http://www.berlin-buehnen.de/de/api/v1/production/123', {query: { limit: 2, format: "json", username: username, api_key: api_key}})
+          subject.send(method, '/production/123', limit: 2)
         end
 
-        it "wraps the response object in a Response", :focus do
-          # stub_request(method, "http://www.berlin-buehnen.de/de/api/v1/event/123?api_key=key&format=json").
-          #   with(:headers => {'User-Agent'=>'ASK HELMUT BerlinBuehnen API Wrapper 0.0.1'}).
-          #   to_return(:body => '{"title": "bla"}', :headers => {:content_type => "application/json"})
-          # stub_request(method, "http://www.berlin-buehnen.de/de/api/v1/location/?api_key=key&format=json&username=test").with(:headers => {'User-Agent'=>'ASK HELMUT BerlinBuehnen API Wrapper 0.0.1'}).to_return(:status => 200, :body => "", :headers => {})
+        it "when requesting a single resource wraps the response object in a Response" do
+          VCR.use_cassette("location") do
+            expect(subject.send(method, '/location/68')).to be_an_instance_of BerlinBuehnen::Response
+          end
+        end
 
-          expect(subject.send(method, '/location/')).to be_an_instance_of BerlinBuehnen::Response
+        it "when requesting collections wraps the response object in a ListResponse" do
+          VCR.use_cassette("locations") do
+            expect(subject.send(method, '/location/')).to be_an_instance_of BerlinBuehnen::ListResponse
+          end
         end
       end
     end
