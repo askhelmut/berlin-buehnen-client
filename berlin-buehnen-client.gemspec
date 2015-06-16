@@ -3,7 +3,7 @@ $:.unshift lib unless $:.include?(lib)
 require 'berlin_buehnen/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = 'berlin_buehnen-client'
+  spec.name        = 'berlin-buehnen-client'
   spec.version     = BerlinBuehnen::VERSION
   spec.platform    = Gem::Platform::RUBY
   spec.authors     = ["Niels Hoffmann"]
@@ -15,12 +15,11 @@ Gem::Specification.new do |spec|
 
   spec.required_rubygems_version = '>= 1.3.5'
 
-  spec.add_dependency('httmultiparty', '>= 0.3.0')
-  spec.add_dependency('hashie', '>= 2.0')
+  spec.add_runtime_dependency 'httmultiparty', '~> 0.3', '>= 0.3.0'
 
   spec.add_development_dependency('bundler', '~> 1.0')
   spec.add_development_dependency('guard', '~> 2.0')
-  spec.add_development_dependency('rb-fsevent')
+  spec.add_development_dependency('rb-fsevent', '~> 0.9')
 
   spec.files        = Dir.glob("lib/**/*") + %w(README.md)
   spec.require_path = 'lib'

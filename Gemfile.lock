@@ -1,9 +1,8 @@
 PATH
   remote: .
   specs:
-    berlin_buehnen-client (0.0.1)
-      hashie (>= 2.0)
-      httmultiparty (>= 0.3.0)
+    berlin-buehnen-client (0.0.1)
+      httmultiparty (~> 0.3, >= 0.3.0)
 
 GEM
   remote: http://rubygems.org/
@@ -37,7 +36,6 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    hashie (3.4.2)
     hitimes (1.2.2)
     httmultiparty (0.3.16)
       httparty (>= 0.7.3)
@@ -103,14 +101,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  berlin_buehnen-client!
+  berlin-buehnen-client!
   bundler (~> 1.0)
   byebug
   guard (~> 2.0)
   guard-rspec
   json
   rake (>= 10.1)
-  rb-fsevent
+  rb-fsevent (~> 0.9)
   rspec (>= 2.14)
   simplecov (>= 0.7)
   terminal-notifier
